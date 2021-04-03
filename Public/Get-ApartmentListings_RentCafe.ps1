@@ -1,5 +1,4 @@
-#  "cookie"="__cfduid=de9f7ce785f455cfa35cc989958ab85441617296870; currentCountry=usa; .AspNetCore.Antiforgery.Z-QtVDMCKbE=CfDJ8Cz7UMMoLdtLlEcngGOp0HcMFo2o0On4f5Kc6-Y6lOZdsmJoA2jI3_rZGmDAUNoU5Ly1NFXAje2tFXEIAEbuNCAoOXWqv1IIHQZ7zuy_UxI_0n7RBGvooMeZvKfxrwiLQ5lLXVMA4QJSrYmcBq45Xco; _gcl_au=1.1.1474236522.1617296877; _ga=GA1.2.437213789.1617296877; yTrackUser=BOLHZRT0VSFKTWZ1GIQ7DP7296877205; yTrackVisit=0TGEISMWWFHPN25IH68SGY7296877234; MarketTrends_RentRanges=graph; _yTrackUser=MTExNjQ5ODY3MSM0OTY2NTgyMzU%253d-gYMwGJ1piIo%253d; _fbp=fb.1.1617296879502.390651108; _hjTLDTest=1; _hjid=bcf85fce-2eee-4403-860a-69cc66cf4e40; _omappvp=XusqqxGQU1ZZKrBMIV7rZiYMOCrRxadqS2FlINUYoiBvg8yCXiiEqrza8OGgxo85DhyG4PxrOtLIOPOIBsSax9QoPHUni0oh; _bs=b8e21a65-efe1-df4e-a65b-c1ce28658a1a; _yTrackVisit=MTk5NjY0MzQ5OCM5MjExNzQ1MDA%253d-nsURuNON3Ss%253d; ILSSaveSearchNotification=false; Bedrooms=undefined; _gat=1; _gat_ILSonlyTracker=1; trackThisPage=1617405606913"
-
+Add-Type -Path ..\lib\Execute.HttpRequest.dll
 $Uri = "https://www.rentcafe.com/Search/GetSearchResults"
 $Headers = [ordered]@{
     "method"="POST"
