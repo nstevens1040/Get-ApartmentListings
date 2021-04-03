@@ -1,3 +1,4 @@
+Add-Type -Path ..\lib\Execute.HttpRequest.dll
 $uri = "https://domu.com/find/map/markers?sw=41.85%2C-87.7&ne=42.02%2C-87.61&domu_bedrooms_min=1&domu_bedrooms_max=&domu_bathrooms_min=1&domu_bathrooms_max=&domu_rentalprice_min=&domu_rentalprice_max=&domu_parking%5B%5D=Yes&domu_airconditioning%5B%5D=1&domu_washerdrier%5B%5D=Washer%2FDryer%3A+In-Unit&sort=&page="
 $Headers = [ordered]@{
     "method"="GET"
