@@ -1,3 +1,4 @@
+Add-Type -Path ..\lib\Execute.HttpRequest.dll
 Add-Type -TypeDefinition @"
 using System;
 using System.Collections.Generic;
