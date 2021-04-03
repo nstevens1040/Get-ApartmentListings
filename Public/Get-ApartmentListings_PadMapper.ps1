@@ -1,3 +1,4 @@
+Add-Type -Path ..\lib\Execute.HttpRequest.dll
 $Uri =  "https://www.padmapper.com/api/t/1/pages/listables"
 $Headers = [ordered]@{
     "Pragma"="no-cache"
