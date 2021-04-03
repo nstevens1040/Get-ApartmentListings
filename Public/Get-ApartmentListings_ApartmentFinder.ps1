@@ -1,3 +1,4 @@
+Add-Type -Path ..\lib\Execute.HttpRequest.dll
 $cs = @"
 using System;
 using System.Collections.Generic;
