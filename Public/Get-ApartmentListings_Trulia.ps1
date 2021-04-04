@@ -1,4 +1,3 @@
-Add-Type -Path ..\lib\Execute.HttpRequest.dll
 $Uri = "https://www.trulia.com/graphql?opname=WEB_searchHomesBySearchDetailsQuery&transactionId=client-c16a4119-0806-4e2e-8d5e-d64da5402cce"
 $Headers = [ordered]@{
     "method"="POST"
