@@ -35,6 +35,8 @@ FileList = @(
     ".\en-US\about_Find-Apartment.help.txt",
     ".\lib\Execute.HttpRequest.dll",
     ".\lib\Execute.HttpRequest.pdb",
+    ".\lib\Newtonsoft.Json.xml",
+    ".\lib\Newtonsoft.Json.dll",
     ".\Public\Get-ApartmentListings_ApartmentFinder.ps1",
     ".\Public\Get-ApartmentListings_ApartmentSearch.ps1",
     ".\Public\Get-ApartmentListings_ForRent.ps1",
