@@ -13,7 +13,6 @@ RequiredAssemblies = @(".\lib\Execute.HttpRequest.dll")
 ScriptsToProcess = @(
     ".\Public\Get-ApartmentListings_ApartmentFinder.ps1",
     ".\Public\Get-ApartmentListings_ApartmentSearch.ps1",
-    ".\Public\Get-ApartmentListings_Domu.ps1",
     ".\Public\Get-ApartmentListings_ForRent.ps1",
     ".\Public\Get-ApartmentListings_Hotpads.ps1",
     ".\Public\Get-ApartmentListings_MyNewPlace.ps1",
@@ -38,7 +37,6 @@ FileList = @(
     ".\lib\Execute.HttpRequest.pdb",
     ".\Public\Get-ApartmentListings_ApartmentFinder.ps1",
     ".\Public\Get-ApartmentListings_ApartmentSearch.ps1",
-    ".\Public\Get-ApartmentListings_Domu.ps1",
     ".\Public\Get-ApartmentListings_ForRent.ps1",
     ".\Public\Get-ApartmentListings_Hotpads.ps1",
     ".\Public\Get-ApartmentListings_MyNewPlace.ps1",
@@ -67,8 +65,7 @@ PrivateData = @{
             "trulia",
             "walkscore",
             "zillow",
-            "zumper",
-            "domu"
+            "zumper"
         )
         LicenseUri = 'https://raw.githubusercontent.com/nstevens1040/Get-ApartmentListings/main/LICENSE'
         ProjectUri = 'https://github.com/nstevens1040/Get-ApartmentListings'
