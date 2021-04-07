@@ -10,5 +10,5 @@ Aggregates search results from:
   - trulia.com
   - walkscore.com
   - zillow.com
-  - and zumper.com
-  - &amp; technically also domu.com, but that is only for Chicago
+  - and zumper.com  
+
