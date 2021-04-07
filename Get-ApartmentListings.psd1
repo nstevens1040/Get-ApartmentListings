@@ -8,7 +8,7 @@ Description = 'Aggregates search results from apartmentfinder.com, apartmentsear
 PowerShellVersion = '5.1'
 # DotNetFrameworkVersion = ''
 CLRVersion = '4.0'
-RequiredAssemblies = @(".\lib\Execute.HttpRequest.dll")
+RequiredAssemblies = @(".\lib\Execute.HttpRequest.dll",".\lib\Newtonsoft.Json.dll")
 # Script files (.ps1) that are run in the caller's environment prior to importing this module.
 ScriptsToProcess = @(
     ".\Public\Get-ApartmentListings_ApartmentFinder.ps1",
