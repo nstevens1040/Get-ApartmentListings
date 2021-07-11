@@ -1,0 +1,439 @@
+﻿5c5,19
+< 	<title>Table</title>
+---
+> 	<title>Apartment listings in Madison, Wisconsin</title>
+> 	<style type="text/css">
+> 		button {
+> 			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+> 		}
+> 		body {
+> 			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+> 			color: white;
+> 			background-color: black;
+> 		}
+> 		table,th,tr,td {
+> 			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+> 			background-color: black;
+> 		}
+> 	</style>
+11c25,390
+< 
+---
+> 	<script type="application/javascript">
+> 		var sortedBy;
+> 		document.addEventListener("DOMContentLoaded",()=>{
+> 			function sortByBedroomsAscending(){
+> 				var rows = document.body.getElementsByTagName("tr");
+> 				[...rows[0].children].filter(function(a){ return (a.innerText.toLowerCase().match("minimum bedrooms"));})[0].click();
+> 				var buttonsdiv = document.body.getElementsByClassName("dt-buttons")[0];
+> 				[...buttonsdiv.children].forEach((i)=>{
+> 					if(i.innerHTML.match('↓')){
+> 						i.innerHTML = i.innerHTML.replace(' ↓','');
+> 					}
+> 					if(i.innerHTML.match('↑')){
+> 						i.innerHTML = i.innerHTML.replace(' ↑','');
+> 					}
+> 				});
+> 				document.getElementById("sbbe").innerHTML = "Bedrooms &uarr;"
+> 				hideEphemeralData();
+> 				sortedBy = "bedroomsAscending";
+> 			}
+> 			function sortByBedroomsDescending(){
+> 				var rows = document.body.getElementsByTagName("tr");
+> 				var b = [...rows[0].children].filter(function(a){ return (a.innerText.toLowerCase().match("maximum bedrooms"));})[0];
+> 				b.click();
+> 				b.click();
+> 				var buttonsdiv = document.body.getElementsByClassName("dt-buttons")[0];
+> 				[...buttonsdiv.children].forEach((i)=>{
+> 					if(i.innerHTML.match('↓')){
+> 						i.innerHTML = i.innerHTML.replace(' ↓','');
+> 					}
+> 					if(i.innerHTML.match('↑')){
+> 						i.innerHTML = i.innerHTML.replace(' ↑','');
+> 					}
+> 				});
+> 				document.getElementById("sbbe").innerHTML = "Bedrooms &darr;"
+> 				hideEphemeralData();
+> 				sortedBy = "bedroomsDescending";
+> 			}
+> 			function sortByBathroomsAscending(){
+> 				var rows = document.body.getElementsByTagName("tr");
+> 				[...rows[0].children].filter(function(a){ return (a.innerText.toLowerCase().match("minimum bathrooms"));})[0].click();
+> 				var buttonsdiv = document.body.getElementsByClassName("dt-buttons")[0];
+> 				[...buttonsdiv.children].forEach((i)=>{
+> 					if(i.innerHTML.match('↓')){
+> 						i.innerHTML = i.innerHTML.replace(' ↓','');
+> 					}
+> 					if(i.innerHTML.match('↑')){
+> 						i.innerHTML = i.innerHTML.replace(' ↑','');
+> 					}
+> 				});
+> 				document.getElementById("sbba").innerHTML = "Bathrooms &uarr;"
+> 				hideEphemeralData();
+> 				sortedBy = "bathroomsAscending";
+> 			}
+> 			function sortByBathroomsDescending(){
+> 				var rows = document.body.getElementsByTagName("tr");
+> 				var b = [...rows[0].children].filter(function(a){ return (a.innerText.toLowerCase().match("maximum bathrooms"));})[0];
+> 				b.click();
+> 				b.click();
+> 				var buttonsdiv = document.body.getElementsByClassName("dt-buttons")[0];
+> 				[...buttonsdiv.children].forEach((i)=>{
+> 					if(i.innerHTML.match('↓')){
+> 						i.innerHTML = i.innerHTML.replace(' ↓','');
+> 					}
+> 					if(i.innerHTML.match('↑')){
+> 						i.innerHTML = i.innerHTML.replace(' ↑','');
+> 					}
+> 				});
+> 				document.getElementById("sbba").innerHTML = "Bathrooms &darr;"
+> 				hideEphemeralData();
+> 				sortedBy = "bathroomsDescending";
+> 			}
+> 			function sortByPriceAscending(){
+> 				var rows = document.body.getElementsByTagName("tr");
+> 				[...rows[0].children].filter(function(a){ return (a.innerText.toLowerCase().match("rental rate from"));})[0].click();
+> 				var buttonsdiv = document.body.getElementsByClassName("dt-buttons")[0];
+> 				[...buttonsdiv.children].forEach((i)=>{
+> 					if(i.innerHTML.match('↓')){
+> 						i.innerHTML = i.innerHTML.replace(' ↓','');
+> 					}
+> 					if(i.innerHTML.match('↑')){
+> 						i.innerHTML = i.innerHTML.replace(' ↑','');
+> 					}
+> 				});
+> 				document.getElementById("sbp").innerHTML = "Price &uarr;"
+> 				hideEphemeralData();
+> 				sortedBy = "priceAscending";
+> 			}
+> 			function sortByPriceDescending(){
+> 				var rows = document.body.getElementsByTagName("tr");
+> 				var b = [...rows[0].children].filter(function(a){ return (a.innerText.toLowerCase().match("rental rate ceiling"));})[0];
+> 				b.click();
+> 				b.click();
+> 				var buttonsdiv = document.body.getElementsByClassName("dt-buttons")[0];
+> 				[...buttonsdiv.children].forEach((i)=>{
+> 					if(i.innerHTML.match('↓')){
+> 						i.innerHTML = i.innerHTML.replace(' ↓','');
+> 					}
+> 					if(i.innerHTML.match('↑')){
+> 						i.innerHTML = i.innerHTML.replace(' ↑','');
+> 					}
+> 				});
+> 				document.getElementById("sbp").innerHTML = "Price &darr;"
+> 				hideEphemeralData();
+> 				sortedBy = "priceDescending";
+> 			}
+> 			function sortByAddressAscending(){
+> 				var rows = document.body.getElementsByTagName("tr");
+> 				var b = [...rows[0].children].filter(function(a){ return (a.innerText.toLowerCase().match("address"));})[0];
+> 				var buttonsdiv = document.body.getElementsByClassName("dt-buttons")[0];
+> 				[...buttonsdiv.children].forEach((i)=>{
+> 					if(i.innerHTML.match('↓')){
+> 						i.innerHTML = i.innerHTML.replace(' ↓','');
+> 					}
+> 					if(i.innerHTML.match('↑')){
+> 						i.innerHTML = i.innerHTML.replace(' ↑','');
+> 					}
+> 				});
+> 				document.getElementById("sba").innerHTML = "Address &uarr;";
+> 				if(sortedBy == "AddressDescending"){
+> 					b.click();
+> 				} else {
+> 					b.click();
+> 					b.click();
+> 				}
+> 				hideEphemeralData();
+> 				sortedBy = "AddressAscending";
+> 			}
+> 			function sortByAddressDescending(){
+> 				var rows = document.body.getElementsByTagName("tr");
+> 				var b = [...rows[0].children].filter(function(a){ return (a.innerText.toLowerCase().match("address"));})[0];
+> 				var buttonsdiv = document.body.getElementsByClassName("dt-buttons")[0];
+> 				[...buttonsdiv.children].forEach((i)=>{
+> 					if(i.innerHTML.match('↓')){
+> 						i.innerHTML = i.innerHTML.replace(' ↓','');
+> 					}
+> 					if(i.innerHTML.match('↑')){
+> 						i.innerHTML = i.innerHTML.replace(' ↑','');
+> 					}
+> 				});
+> 				document.getElementById("sba").innerHTML = "Address &darr;"
+> 				if(sortedBy == "AddressAscending"){
+> 					b.click();
+> 				} else {
+> 					b.click();
+> 					b.click();
+> 				}
+> 				hideEphemeralData();
+> 				sortedBy = "AddressDescending";
+> 			}
+> 			function sortByPrice(){
+> 				var buttonsdiv = document.body.getElementsByClassName("dt-buttons")[0];
+> 				[...buttonsdiv.children].forEach((i)=>{
+> 					if(i.tagName.toLowerCase() == "button"){
+> 						i.style.backgroundColor = "chartreuse";
+> 						i.style.color = "black";
+> 					}
+> 				});
+> 				document.getElementById("sbp").style.backgroundColor = "purple";
+> 				document.getElementById("sbp").style.color = "white";
+> 				switch(sortedBy){
+> 					case 'priceAscending':
+> 						sortByPriceDescending();
+> 						break;
+> 					case 'priceDescending':
+> 						sortByPriceAscending();
+> 						break;
+> 					default:
+> 						sortByPriceAscending();
+> 						break;
+> 				}
+> 			}
+> 			function sortByAddress(){
+> 				var buttonsdiv = document.body.getElementsByClassName("dt-buttons")[0];
+> 				[...buttonsdiv.children].forEach((i)=>{
+> 					if(i.tagName.toLowerCase() == "button"){
+> 						i.style.backgroundColor = "chartreuse";
+> 						i.style.color = "black";
+> 					}
+> 				});
+> 				document.getElementById("sba").style.backgroundColor = "purple";
+> 				document.getElementById("sba").style.color = "white";
+> 				switch(sortedBy){
+> 					case 'AddressAscending':
+> 						sortByAddressDescending();
+> 						break;
+> 					case 'AddressDescending':
+> 						sortByAddressAscending();
+> 						break;
+> 					default:
+> 						sortByAddressAscending();
+> 						break;
+> 				}
+> 			}
+> 			function sortByBedrooms(){
+> 				var buttonsdiv = document.body.getElementsByClassName("dt-buttons")[0];
+> 				[...buttonsdiv.children].forEach((i)=>{
+> 					if(i.tagName.toLowerCase() == "button"){
+> 						i.style.backgroundColor = "chartreuse";
+> 						i.style.color = "black";
+> 					}
+> 				});
+> 				document.getElementById("sbbe").style.backgroundColor = "purple";
+> 				document.getElementById("sbbe").style.color = "white";
+> 				switch(sortedBy){
+> 					case 'bedroomsAscending':
+> 						sortByBedroomsDescending();
+> 						break;
+> 					case 'bedroomsDescending':
+> 						sortByBedroomsAscending();
+> 						break;
+> 					default:
+> 						sortByBedroomsAscending();
+> 						break;
+> 				}
+> 			}
+> 			function sortByBathrooms(){
+> 				var buttonsdiv = document.body.getElementsByClassName("dt-buttons")[0];
+> 				[...buttonsdiv.children].forEach((i)=>{
+> 					if(i.tagName.toLowerCase() == "button"){
+> 						i.style.backgroundColor = "chartreuse";
+> 						i.style.color = "black";
+> 					}
+> 				});
+> 				document.getElementById("sbba").style.backgroundColor = "purple";
+> 				document.getElementById("sbba").style.color = "white";
+> 				switch(sortedBy){
+> 					case 'bathroomsAscending':
+> 						sortByBathroomsDescending();
+> 						break;
+> 					case 'bathroomsDescending':
+> 						sortByBathroomsAscending();
+> 						break;
+> 					default:
+> 						sortByBathroomsAscending();
+> 						break;
+> 				}
+> 			}
+> 
+> 			function hideEphemeralData(){
+> 				var rows = [];
+> 				[...document.body.getElementsByTagName("tr")].filter(function(a){
+> 					return (a.getAttribute("role") == "row");
+> 				}).forEach((i)=>{
+> 					rows.push(i);
+> 				})
+> 				for(var i = 2; i < rows.length; i++){
+> 					var row = rows[i];
+> 					var tds = row.children;
+> 					tds[0].classList.add("info");
+> 					tds[1].classList.add("link");
+> 					tds[2].classList.add("map");
+> 					tds[3].classList.add("address");
+> 					tds[4].classList.add("rentalratefrom");
+> 					tds[5].classList.add("rentalrateceiling");
+> 					tds[6].classList.add("minimumbedrooms");
+> 					tds[7].classList.add("maximumbedrooms");
+> 					tds[8].classList.add("minimumbathrooms");
+> 					tds[9].classList.add("maximumbathrooms");
+> 					tds[10].classList.add("phonenumber");
+> 					tds[11].classList.add("buildingname");
+> 					tds[12].classList.add("mgmtcompany");
+> 					tds[13].classList.add("email");
+> 					tds[14].classList.add("platform");
+> 				}
+> 				[...document.body.getElementsByClassName("address")].forEach((i)=>{
+> 					i.style.cssText = "display: none;";
+> 				});
+> 				[...document.body.getElementsByClassName("rentalratefrom")].forEach((i)=>{
+> 					i.style.cssText = "display: none;";
+> 				});
+> 				[...document.body.getElementsByClassName("rentalrateceiling")].forEach((i)=>{
+> 					i.style.cssText = "display: none;";
+> 				});
+> 				[...document.body.getElementsByClassName("minimumbedrooms")].forEach((i)=>{
+> 					i.style.cssText = "display: none;";
+> 				});
+> 				[...document.body.getElementsByClassName("maximumbedrooms")].forEach((i)=>{
+> 					i.style.cssText = "display: none;";
+> 				});
+> 				[...document.body.getElementsByClassName("maximumbathrooms")].forEach((i)=>{
+> 					i.style.cssText = "display: none;";
+> 				});
+> 				[...document.body.getElementsByClassName("minimumbathrooms")].forEach((i)=>{
+> 					i.style.cssText = "display: none;";
+> 				});
+> 				[...document.body.getElementsByClassName("phonenumber")].forEach((i)=>{
+> 					i.style.cssText = "display: none;";
+> 				});
+> 				[...document.body.getElementsByClassName("buildingname")].forEach((i)=>{
+> 					i.style.cssText = "display: none;";
+> 				});
+> 				[...document.body.getElementsByClassName("platform")].forEach((i)=>{
+> 					i.style.cssText = "display: none;";
+> 				});
+> 				[...document.body.getElementsByClassName("mgmtcompany")].forEach((i)=>{
+> 					i.style.cssText = "display: none;";
+> 				});
+> 				[...document.body.getElementsByClassName("email")].forEach((i)=>{
+> 					i.style.cssText = "display: none;";
+> 				});
+> 				[...rows[0].children].filter(function(a){
+> 					return (!a.innerText.toLowerCase().match("info") && !a.innerText.toLowerCase().match("link") && !a.innerText.toLowerCase().match("map"));
+> 				}).forEach((i)=>{
+> 					i.style.cssText = "display: none;";
+> 				});
+> 			}
+> 			document.onscroll = function(){
+> 				hideEphemeralData();
+> 			}
+> 			// sort by price
+> 			function defer(method) {
+> 				if (typeof(document.body.getElementsByClassName("dt-buttons")[0]) != 'undefined') {
+> 					method()
+> 				} else {
+> 					setTimeout(function() { defer(method) }, 50);
+> 				}
+> 			}
+> 			defer(function(){
+> 				var span = document.createElement("span");
+> 				span.innerHTML = "Sort by:  ";
+> 				var buttonsdiv = document.body.getElementsByClassName("dt-buttons")[0];
+> 				var newdiv = document.createElement("div");
+> 				newdiv.classList.add("dt-buttons");
+> 				var tw = document.getElementById("table_wrapper");
+> 				newdiv.appendChild(span);
+> 				tw.removeChild(buttonsdiv);
+> 				tw.insertBefore(newdiv,document.body.getElementsByClassName("dataTables_scroll")[0]);
+> 				var buttons = [
+> 					{
+> 						"label":"Price",
+> 						"id":"sbp",
+> 						"function": sortByPrice
+> 					},
+> 					{
+> 						"label":"Address",
+> 						"id":"sba",
+> 						"function": sortByAddress
+> 					},
+> 					{
+> 						"label":"Bathrooms",
+> 						"id":"sbba",
+> 						"function": sortByBathrooms
+> 					},
+> 					{
+> 						"label":"Bedrooms",
+> 						"id":"sbbe",
+> 						"function": sortByBedrooms
+> 					},
+> 				];
+> 				function addSorterButton(label,id,method){
+> 					var buttonsdiv = document.body.getElementsByClassName("dt-buttons")[0];
+> 					var button = document.createElement("button");
+> 					button.innerHTML = label;
+> 					button.style.cssText = "color: black; background-color: chartreuse; font-weight: bold;";
+> 					button.id = id;
+> 					button.onclick = method;
+> 					buttonsdiv.appendChild(button);
+> 				}
+> 				for(var i = 0; i < buttons.length; i++){
+> 					var b = buttons[i];
+> 					addSorterButton(b.label,b.id,b.function);
+> 				}
+> 			});
+> 	
+> 		});
+> 		</script>
+246c653,655
+< 			font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+---
+> 			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+> 			color: white;
+> 			background-color: black;
+306c715,716
+< 			color: #039 !important;
+---
+> 			/*color: #039 !important;*/
+> 			color: white !important;
+342c752
+< 			background: #fff;
+---
+> 			/*background: #fff;*/
+350c760
+< 			color: #039;
+---
+> 			/*color: white;*/
+358c768
+< 			color: #039;
+---
+> 			/*color:white;*/
+400c810
+< 			color: #669;
+---
+> 			/*color:white;*/
+404,406c814,816
+< 		#table_wrapper table tbody tr:hover td {
+< 			color: #009;
+< 		}
+---
+> 		/*#table_wrapper table tbody tr:hover td {
+> 			color: white;
+> 		}*/
+434c844
+< 			color: #039;
+---
+> 			color: white;
+450a861,872
+> 		.left {
+> 	        float: left;
+>     	    width: 150px;
+>         	color: chartreuse;
+> 	    }
+>     	.right {
+>         	float: left;
+>         	color: white;
+> 	    }
+>     	a {
+>         	color: white;
+> 	    }
