@@ -79,7 +79,10 @@ function Get-ApartmentListings_RentCafe
                 $body
             )
             $json = $r.ResponseText | convertFrom-Json
-            $JSON.result.Rentals[0].Rentals.forEach({ $results += $_ })
+            if($JSON.result.Rentals.Count -gt 0)
+            {
+                $JSON.result.Rentals[0].Rentals.forEach({ $results += $_ })
+            }
         }
     }
     return $results
