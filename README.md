@@ -19,6 +19,11 @@ This script will only work using **Windows PowerShell** and will not work with P
 I've tested and confirmed that the script runs without error using **Windows PowerShell 5.1.14393.4467**.  
   
 **Fair warning:** the script **may take over one hour** to complete, depending on the city you're conducting your search in (Chicago, IL took 1 hour, 42 minutes, & 52 seconds and produced 7094 results). The purpose of this script is not to *quickly* gather apartment listing results, but to gather apartment listings and their granular details. That being said, the script will use 4 threads only because **my** CPU has four cores. Additionally, my machine has 12GB RAM so it's hard to say how well it will perform with any amount of RAM less than 12GB as I have seen the script's memory usage jump over 2GB in some cases.  
+
+You may also see a bunch of warnings like these:  
+<img src="https://raw.githubusercontent.com/nstevens1040/Get-ApartmentListings/main/.gitignore/Windows%20Security.PNG">  
+My experience is, although they are annoying, they aren't pointing to anything erroneous, harmful, or compromising.  
+I just close them all.  
   
 Before you begin, you will need these environment variables set up:
    - **[Google Places](https://developers.google.com/places/web-service/get-api-key)** - GooglePlaces_API_Key
